@@ -1,0 +1,30 @@
+{
+  "name": "video-cutter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedLine555/video-cutter.git"
+  },
+  "author": "Nykyta Yevdokymenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedLine555/video-cutter/issues"
+  },
+  "homepage": "https://github.com/RedLine555/video-cutter#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cloudinary": "^1.11.0",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "mongoose": "^5.0.16",
+    "path": "^0.12.7",
+    "video-stitch": "^1.4.0"
+  }
+}
