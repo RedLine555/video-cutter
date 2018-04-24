@@ -19,6 +19,12 @@ exports.upload = async function (req, res) {
         return res.status(400).send("No video loaded")        
     }
 
+    const duration = filesDomain.countSeconds(req.body.endTime) - filesDomain.countSeconds(req.body.startTime);
+
+    if (duration <= 0) {
+        return res.status(400).send("Wrong time period")        
+    }
+
     const filename = filesDomain.mutateFileName(req.files.video.name);
     
     var file = {
@@ -26,7 +32,7 @@ exports.upload = async function (req, res) {
         endTime : req.body.endTime,
         filename: filename,
         outFilename: null,
-        duration: 3,
+        duration: duration,
         status: FILE_STATUSES.SCHEDULED,
         error: null,
     }

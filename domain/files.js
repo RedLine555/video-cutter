@@ -44,3 +44,8 @@ exports.mutateFileName = function(filename) {
     const out_name = name + salt + '.' + extention;
     return out_name;
 }
+
+exports.countSeconds = function(time) {
+    let [hours, minutes, seconds] = time.split(':');
+    return hours * 60 * 60 + minutes * 60 + seconds;
+}
