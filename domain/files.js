@@ -7,7 +7,7 @@ exports.cutFile = function (fileData) {
     return new Promise((resolve, reject) => {
 
         const out_name = exports.mutateFileName(fileData.filename);
-
+        setTimeout(() => {
         ffmpeg(path.resolve('videos/in/'+fileData.filename))
             .setStartTime(fileData.startTime)
             .setDuration(fileData.duration)
@@ -26,6 +26,7 @@ exports.cutFile = function (fileData) {
                 console.log('error: ', +err);
                 reject(err)
             }).run()
+        },5000);
     });
 };
 
